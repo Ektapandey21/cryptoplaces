@@ -35,18 +35,22 @@ const currencyHandler = (event)=>{
 //signup 
 
 const navigate = useNavigate();
-const {userData,backendUrl,setUserData,setIsLoggedIn}=useContext(AppContent)
+//const {userData,backendUrl,setUserData,setIsLoggedIn}=useContext(AppContent)
 
   return (
     <div className='navbar'>
-    <Link to={`/`}>
+    <Link to={`/Home`}>
       <img src={logo} alt='' className='logo' />
     </Link>
       <ul>  
-      <Link to={`/`}> <li>Home</li></Link>
+      <Link to={`/Home`}> <li>Home</li></Link>
+      <Link to={`/Features`}>
         <li>Features</li>
-        <li>Pricing</li>
+        </Link>
+        {/* <li>Pricing</li> */}
+        <Link to={`/blogPosts`}>
         <li>Blog</li>
+        </Link>
       </ul>
       <div className='nav-right'>
         <select onChange={currencyHandler}>
@@ -54,12 +58,20 @@ const {userData,backendUrl,setUserData,setIsLoggedIn}=useContext(AppContent)
             <option value='eur'>EUR</option>
             <option value='inr'>INR</option>
         </select>
-        {/* {userData ? 
-        <div>
+        {/* {userData ?  */}
+        {/* <div>
           {userData.name[0].toUpperCase()}
-        </div>: 
-         <button onClick={()=>navigate('/login')}>Login <img src={arrow_icon}/></button>}
-        */}
+        </div>:  */}
+         {/* <button onClick={()=>navigate('/login')}>Login <img src={arrow_icon}/></button> */}
+         {/* } */}
+         <button 
+  onClick={() => navigate('/')} 
+  className="flex items-center gap-2 text-white px-4 py-2 rounded-full bg-[#7927ff] hover:scale-105 transition-all duration-300"
+>
+  Login 
+  <img src={arrow_icon} alt="arrow" className="w-4 h-4" />
+</button>
+       
       </div>
 
     </div>

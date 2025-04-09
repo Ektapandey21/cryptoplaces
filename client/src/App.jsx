@@ -10,7 +10,8 @@ import EmailVerify from './pages/EmailVerify'
 import ResetPassword from './pages/ResetPassword'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Features from './pages/Features'
+import Blog from './pages/blogPosts'
 const App = () => {
 
 
@@ -28,6 +29,8 @@ const App = () => {
         <Route path='/coin/:coinId' element={<Coin/>}/> 
         {/* // signup pages */}
         <Route path='Home' element={<Home/>}/>
+        <Route path='Features' element={<Features/>}/>
+        <Route path='BlogPosts' element={<Blog/>}/>
         <Route path='email-verify' element={<EmailVerify/>}/>
         <Route path='reset-password' element={<ResetPassword/>}/>
       </Routes>

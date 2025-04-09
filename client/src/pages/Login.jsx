@@ -57,6 +57,15 @@ const Login = () => {
 
 
   return (
+  <div>
+    <button 
+    onClick={() => navigate('/Home')}
+    className="text-indigo-300 hover:text-white border border-indigo-500 px-4 py-1 rounded-full hover:bg-[#7927ff44] transition-all duration-300"
+  >
+    Home
+  </button>
+  
+
     <div className='flex items-center justify-center min-h-screen px-6 sm:px-0 '>
         <div className='bg-slate-900 px-6 py-12 sm:py-16 rounded-2xl shadow-lg w-full sm:w-[28rem] text-indigo-300 text-sm '>
 
@@ -94,8 +103,14 @@ const Login = () => {
             value={password}
             type='password' 
             placeholder='Password' required 
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{6,}"
+
             className='bg-transparent outline-none text-white w-full placeholder:text-gray-400 h-8' />
           </div>
+          <p className="text-xs text-white mt-1 ml-2">
+  Password must contain at least 6 characters, including one uppercase letter, one lowercase letter, and one special character.
+</p>
+
 
           <p onClick={()=>navigate('/reset-password')} className='mb-4 text-indigo-500 cursor-pointer'>Forgot Password?</p>
 
@@ -113,6 +128,7 @@ const Login = () => {
          </p>)}
         
       </div>
+    </div>
     </div>
   )
 }
